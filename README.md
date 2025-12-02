@@ -1,20 +1,27 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import Login from '../pages/Login.vue'
-import Register from '../pages/Register.vue'
-import Dashboard from '../pages/Dashboard.vue'
-import Logs from '../pages/Logs.vue'
+<template>
+  <div id="app">
+    <Navbar />
+    <router-view />
+  </div>
+</template>
 
-const routes = [
-  { path: '/', redirect: '/login' },
-  { path: '/login', component: Login },
-  { path: '/register', component: Register },
-  { path: '/dashboard', component: Dashboard },
-  { path: '/logs', component: Logs }
-]
+<script>
+import Navbar from './components/Navbar.vue'
 
-const router = createRouter({
-  history: createWebHistory(),
-  routes
-})
+export default {
+  components: {
+    Navbar
+  }
+}
+</script>
 
-export default router# Logshield
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+#app {
+  padding: 20px;
+}
+</style>
